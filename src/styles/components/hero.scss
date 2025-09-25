@@ -6,5 +6,27 @@
             margin-top: var(--spacing-lg);
             background-image: linear-gradient(to right, #fff , rgba(255,255,255,0));
         }
+        
+        .tagline > span {
+            position: relative;
+            display: inline-block;
+            color: var(--color-primary);
+            height: 1em;
+            vertical-align: bottom;
+            overflow: hidden;
+        }
+
+        .tagline > span > span {
+            display: block;
+            animation: animateTaglines 5s infinite ease;
+        }
+        @keyframes animateTaglines {
+            0% {transform: translateY(0%);}
+            20% {transform: translateY(-100%);}
+            40% {transform: translateY(-200%);}
+            60% {transform: translateY(-300%);}
+            100% {transform: translateY(0%);}
+        }
+
     }
 }

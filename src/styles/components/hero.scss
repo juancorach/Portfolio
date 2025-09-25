@@ -1,0 +1,10 @@
+.hero{
+    .hero__content{
+        .line{
+            width: 80%;
+            height: 3px;
+            margin-top: var(--spacing-lg);
+            background-image: linear-gradient(to right, #fff , rgba(255,255,255,0));
+        }
+    }
+}

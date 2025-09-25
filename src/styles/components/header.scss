@@ -1,0 +1,15 @@
+.header{
+    background: transparent;
+
+    .wrapper{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    
+        .menu ul{
+            display: flex;
+            gap: var(--spacing-lg);
+            list-style: none;
+        }
+    }
+}

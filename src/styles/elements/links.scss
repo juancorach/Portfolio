@@ -12,8 +12,70 @@ a {
     }
 }
 
-.logo{
+.logo {
     font-family: var(--font-secondary);
     font-size: typo(40px);
     text-transform: uppercase;
+}
+
+.circle-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(77, 96, 216, 0.5);
+    width: 217px;
+    height: 217px;
+    border-radius: 100%;
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(10px);
+    cursor: pointer;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+    animation: glassPulse 3s infinite ease-in-out;
+
+    &:hover {
+        transform: translateY(-4px) scale(1.05);
+        background-color: var(--color-primary);
+        backdrop-filter: blur(25px);
+        -webkit-backdrop-filter: blur(25px);
+        box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4),
+            inset 0 1px 0 rgba(255, 255, 255, 0.4),
+            0 0 0 1px rgba(255, 255, 255, 0.3);
+        animation: none;
+    }
+
+    &:active {
+        transform: translateY(-2px) scale(1.02);
+        background: rgba(255, 255, 255, 0.2);
+    }
+}
+
+.button-text {
+    color: var(--color-white);
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 1.2;
+    z-index: 1;
+
+    span {
+        font-size: typo(24px, 36px);
+        font-weight: 700;
+    }
+}
+
+@keyframes glassPulse {
+    0% {
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3),
+            inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    }
+    50% {
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4),
+            inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    }
+    100% {
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3),
+            inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    }
 }

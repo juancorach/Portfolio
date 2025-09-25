@@ -14,8 +14,13 @@
     --font-size-h3: #{typo(24px, 32px)};
 }
 
-.surtitle{
+.surtitle {
     font-size: typo(24px, 32px);
     font-weight: 600;
+    margin: 0;
+}
+
+.big-p {
+    font-size: typo(20px, 24px);
     margin: 0;
 }

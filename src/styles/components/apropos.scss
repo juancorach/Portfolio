@@ -1,0 +1,15 @@
+.apropos {
+    .wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-sm);
+        padding: var(--spacing-xxl) 0;
+    }
+
+    .apropos__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+}

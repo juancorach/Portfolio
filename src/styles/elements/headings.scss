@@ -18,15 +18,27 @@ h1 {
     font-size: var(--font-size-h1);
     text-transform: uppercase;
     line-height: 1;
+
+    span {
+        color: var(--color-primary);
+    }
 }
 
 h2 {
     font-size: var(--font-size-h2);
     text-transform: uppercase;
+
+    span {
+        color: var(--color-primary);
+    }
 }
 
 h3 {
     font-size: var(--font-size-h3);
+
+    span {
+        color: var(--color-primary);
+    }
 }
 
 h4 {

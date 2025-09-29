@@ -1,0 +1,186 @@
+.contact {
+    position: relative;
+    z-index: 5;
+
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 65%;
+        gap: var(--spacing-sm);
+    }
+
+    .form {
+        --input-radius: 4px;
+        --input-padding: 1em;
+
+        fieldset {
+            border: none;
+            padding: 0;
+        }
+
+        .grid {
+            display: grid;
+            gap: var(--spacing-md);
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    .form__footer {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .form__body {
+        .is-sent & {
+            display: none;
+        }
+    }
+
+    .form__confirmation {
+        display: none;
+
+        .is-sent & {
+            display: block;
+        }
+    }
+
+    /*
+   input
+   ========================================================================== */
+
+    .contact {
+        .left,
+        .right {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-md);
+        }
+
+        .right {
+            justify-content: space-between;
+
+            .message {
+                display: flex;
+                flex-direction: column;
+                gap: var(--spacing-md);
+            }
+        }
+    }
+
+    .input {
+        padding-bottom: var(--spacing-md);
+    }
+
+    .form__list {
+        p {
+            color: var(--color-white);
+            font-size: typo(16px);
+            font-weight: 400;
+            padding-bottom: var(--spacing-xs);
+        }
+
+        .options {
+            display: flex;
+            gap: var(--spacing-lg);
+        }
+    }
+
+    .form__footer {
+        padding: var(--spacing-ml) 0 var(--spacing-xxl) 0;
+    }
+
+    .form__confirmation {
+        h3 {
+            color: var(--color-white);
+            padding-bottom: var(--spacing-xs);
+        }
+    }
+
+    .textarea .input__element {
+        height: 310px !important;
+    }
+
+    .error-message {
+        display: none;
+        font-size: typo(14px);
+        color: var(--color-primary);
+    }
+
+    .input__label {
+        display: block;
+        color: var(--color-white);
+        font-size: typo(24px);
+        padding-bottom: var(--spacing-xs);
+    }
+
+    .input__element {
+        color: var(--color-white);
+        border-radius: var(--spacing-md);
+        background-color: rgba(60, 59, 59, 0.4);
+        border: none;
+        backdrop-filter: blur(3px);
+        -webkit-backdrop-filter: blur(10px);
+        cursor: pointer;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
+            inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        cursor: pointer;
+        padding: 16px var(--spacing-lg) 16px var(--spacing-md);
+        width: 100%;
+
+        &:-webkit-autofill,
+        &:-webkit-autofill:active {
+            -webkit-box-shadow: inset 0 0 0 30px var(--color-white) !important;
+            -webkit-text-fill-color: inherit !important;
+        }
+
+        // focus
+        &:focus,
+        &:-webkit-autofill:focus,
+        &:focus + .input__label::before {
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            -webkit-box-shadow: inset 0 0 0 30px var(--color-primary) !important;
+        }
+
+        // autocomplete
+        &::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
+    }
+
+    /*
+   textarea
+   ========================================================================== */
+
+    .textarea {
+        .input__element {
+            resize: vertical;
+            height: 150px;
+        }
+    }
+
+    /*
+   error
+   ========================================================================== */
+
+    .error {
+        .input__element,
+        &.check .input__label::before,
+        &.radio .input__label::before,
+        .check .input__label::before,
+        .radio .input__label::before {
+            box-shadow: inset 0 0 0 3px var(--color-primary);
+        }
+
+        .input__label {
+            color: var(--color-primary);
+        }
+
+        .error-message {
+            display: block;
+        }
+    }
+
+    .credits {
+        padding: var(--spacing-lg) 0 var(--spacing-md) 0;
+        margin: 0;
+    }
+}

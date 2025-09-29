@@ -23,15 +23,24 @@
             position: relative;
             display: inline-block;
             color: var(--color-primary);
-            height: 1em;
-            vertical-align: bottom;
+            height: 1.2em;
+            vertical-align: center;
             overflow: hidden;
+            margin: 0;
+
+            .space{
+                line-height: 1.1;
+            }
         }
 
         .tagline > span > span {
-            display: block;
-            line-height: 1;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
             animation: animateTaglines 14s infinite ease-in-out;
+            line-height: 1;
+            margin: 0;
+            padding: 12px 0;
         }
 
         @keyframes animateTaglines {

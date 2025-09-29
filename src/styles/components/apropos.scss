@@ -40,3 +40,30 @@
         }
     }
 }
+
+.profil {
+    .swiper-pagination {
+        position: static;
+        padding-top: var(--spacing-md);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .swiper-pagination-bullet {
+            background-color: var(--color-action-light);
+            opacity: 0.3;
+            --swiper-pagination-bullet-width: var(--spacing-xs);
+            --swiper-pagination-bullet-height: var(--spacing-xs);
+            border-radius: 100%;
+        }
+        .swiper-pagination-bullet-active {
+            --swiper-pagination-bullet-width: var(--spacing-sm);
+            --swiper-pagination-bullet-height: var(--spacing-sm);
+            opacity: 1;
+        }
+    }
+
+    .swiper {
+        overflow: visible;
+    }
+}

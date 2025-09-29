@@ -13,3 +13,30 @@
         align-items: flex-start;
     }
 }
+
+.hero-apropos {
+    .wrapper {
+        position: relative;
+        height: 90vh;
+    }
+
+    .hero__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 70%;
+    }
+
+    .hero__media {
+        position: absolute;
+        width: 60%;
+        bottom: 0;
+        right: 0;
+
+        img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}

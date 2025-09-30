@@ -24,7 +24,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        height: 70%;
+        height: 85%;
     }
 
     .hero__media {
@@ -42,18 +42,99 @@
 }
 
 .profil {
+    h2{
+        padding-bottom: var(--spacing-md);
+    }
+
+    .grid{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: var(--spacing-sm);
+        padding-bottom: var(--spacing-xxl);
+    }
+
+    .left{
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+
+    .hard-skills{
+        border-radius: var(--spacing-md);
+        background-color: rgba(60, 59, 59, 0.4);
+        border: none;
+        backdrop-filter: blur(3px);
+        -webkit-backdrop-filter: blur(10px);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
+            inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        padding: var(--spacing-lg);
+
+        ul{
+            padding-top: var(--spacing-sm);
+            margin: 0;
+        }
+    }
+
+    .soft-skills{
+        border-radius: var(--spacing-md);
+        background-color: rgba(60, 59, 59, 0.4);
+        border: none;
+        backdrop-filter: blur(3px);
+        -webkit-backdrop-filter: blur(10px);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
+            inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        padding: var(--spacing-lg);
+        height: 100%;
+
+        ul{
+            padding-top: var(--spacing-sm);
+            margin: 0;
+        }
+    }
+
+    .swiper{
+        max-width: 470px;
+        overflow: hidden;
+        border-radius: 24px;
+        margin: 0;
+        max-height: 680px;
+
+        .swiper-wrapper{
+            position: relative;
+            max-height: 680px;
+        }
+
+        .swiper-slide{
+            max-height: 680px;
+        }
+
+        img{
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
     .swiper-pagination {
-        position: static;
-        padding-top: var(--spacing-md);
+        position: absolute;
+        bottom: 16px;
+        left: 25%;
         display: flex;
         justify-content: center;
         align-items: center;
+        max-width: 216px;
+        gap: 8px;
+        background: rgba(77, 96, 216, 0.5);
+        border-radius: 24px;
+        backdrop-filter: blur(3px);
+        -webkit-backdrop-filter: blur(10px);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
+            inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        padding: 8px;
 
         .swiper-pagination-bullet {
-            background-color: var(--color-action-light);
-            opacity: 0.3;
-            --swiper-pagination-bullet-width: var(--spacing-xs);
-            --swiper-pagination-bullet-height: var(--spacing-xs);
+            background-color: var(--color-white);
+            opacity: 0.2;
             border-radius: 100%;
         }
         .swiper-pagination-bullet-active {

@@ -1,5 +1,7 @@
 import Carousel from './components/Carousel.js';
 import Form from './components/Form.js';
+import Scroller from './components/Scroller.js';
+import TextAnim from './components/TextAnim.js';
 
 export default class ComponentFactory {
   constructor() {
@@ -7,6 +9,8 @@ export default class ComponentFactory {
     this.componentList = {
       Carousel,
       Form,
+      Scroller,
+      TextAnim,
     };
     this.init();
   }

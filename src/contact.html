@@ -11,132 +11,107 @@
             (courriel, téléphone ou réseaux sociaux). Je suis toujours ouvert aux échanges et aux nouvelles opportunités.
         </p>
         <div class="grid">
-            <div class="contact__info">
-                <div class="info">
+            <div class="info">
+                <div class="details">
                     <p class="surtitle">
                         Mes
                         <span>coordonnées</span>
                     </p>
-                    <div class="email">
+                    <a href="mailto:corachjuan@gmail.com" class="email">
                         <svg class="icon">
                             <use href="#icon-email"></use>
                         </svg>
-                        <a href="mailto:corachjuan@gmail.com" class="big-p">corachjuan@gmail.com</a>
-                    </div>
-                    <div class="phone">
+                        <p class="big-p">corachjuan@gmail.com</p>
+                    </a>
+                    <a href="tel:5146079582" class="phone">
                         <svg class="icon">
                             <use href="#icon-phone"></use>
                         </svg>
-                        <a href="tel:5146079582" class="big-p">(514) 607-9582</a>
-                    </div>
-                    <div class="cv">
+                        <p class="big-p">(514) 607-9582</p>
+                    </a>
+                    <a href="documents/curriculum-jc.pdf" class="cv">
                         <svg class="icon">
                             <use href="#icon-download"></use>
                         </svg>
-                        <a href="documents/curriculum-jc.pdf" class="big-p">Curriculum vitae</a>
-                    </div>
+                        <p class="big-p">Curriculum vitae</p>
+                    </a>
                 </div>
-                <div class="socials">
+
+                <div class="reseaux-sociaux">
                     <p class="surtitle">
                         Mes
                         <span>réseaux sociaux</span>
                     </p>
-                    <a href="https://www.linkedin.com/in/juancorach/" class="social">
-                        <svg class="icon">
-                            <use href="#icon-linkedin"></use>
-                        </svg>
-                    </a>
-                    <a href="https://github.com/juancorach" class="social">
-                        <svg class="icon">
-                            <use href="#icon-github"></use>
-                        </svg>
-                    </a>
-                    <a href="https://www.instagram.com/juancorach/" class="social">
-                        <svg class="icon">
-                            <use href="#icon-instagram"></use>
-                        </svg>
-                    </a>
-                    <a href="https://www.youtube.com/@juancorach" class="social">
-                        <svg class="icon">
-                            <use href="#icon-youtube"></use>
-                        </svg>
-                    </a>
+                    <div class="socials">
+                        <a href="https://www.linkedin.com/in/juancorach/" class="social">
+                            <svg class="icon">
+                                <use href="#icon-linkedin"></use>
+                            </svg>
+                        </a>
+                        <a href="https://github.com/juancorach" class="social">
+                            <svg class="icon">
+                                <use href="#icon-github"></use>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/juancorach/" class="social">
+                            <svg class="icon">
+                                <use href="#icon-instagram"></use>
+                            </svg>
+                        </a>
+                        <a href="https://www.youtube.com/@juancorach" class="social">
+                            <svg class="icon">
+                                <use href="#icon-youtube"></use>
+                            </svg>
+                        </a>
+                    </div>
+                    <p class="credits">Tous droits réservés © 2025 Juan Corach</p>
                 </div>
             </div>
-            <div class="contact__form">
-                <form action="" class="form" autocomplete="off" data-component="Form">
-                    <div class="form__body">
-                        <fieldset class="grid">
-                            <div class="left">
-                                <div class="input">
-                                    <label class="input__label big-p" for="name">Prénom*</label>
-                                    <input class="input__element" type="text" name="name" id="name" placeholder="ex.: Juan" required />
-                                    <span class="error-message">Veuillez remplir ce champ.</span>
-                                </div>
-                                <div class="input">
-                                    <label class="input__label big-p" for="last-name">Nom*</label>
-                                    <input class="input__element" type="text" name="last-name" id="last-name" placeholder="ex.: Corach" required />
-                                    <span class="error-message">Veuillez remplir ce champ.</span>
-                                </div>
-                                <div class="input">
-                                    <label class="input__label big-p" for="email">Adresse courriel*</label>
-                                    <input class="input__element" type="email" name="email" id="email" placeholder="ex.: nom@courriel.com" required />
-                                    <span class="error-message">Veuillez remplir ce champ.</span>
-                                </div>
-                                <div class="input">
-                                    <label class="input__label big-p" for="phone">Numéro de téléphone*</label>
-                                    <input
-                                        class="input__element"
-                                        type="tel"
-                                        name="phone"
-                                        id="phone"
-                                        placeholder="ex.: (123) 456-7890"
-                                        pattern="^(\+\d{1,2}\s?)?\(?\d{3}\)?[\s\.\-]?\d{3}[\s\.\-]?\d{4}$"
-                                        required
-                                    />
-                                    <span class="error-message">Veuillez remplir ce champ.</span>
-                                </div>
+
+            <form action="" class="form" autocomplete="off" data-component="Form">
+                <div class="form__body">
+                    <fieldset class="grid">
+                        <div class="names">
+                            <div class="input">
+                                <label class="input__label big-p" for="name">Prénom*</label>
+                                <input class="input__element" type="text" name="name" id="name" placeholder="ex.: Juan" required />
+                                <span class="error-message">Veuillez remplir ce champ.</span>
                             </div>
-                            <div class="right">
-                                <div class="input">
-                                    <label class="input__label big-p" for="phone">Sujet*</label>
-                                    <input
-                                        class="input__element"
-                                        type="sujet"
-                                        name="sujet"
-                                        id="sujet"
-                                        placeholder="ex.: Écrviez le sujet du message ici"
-                                        required
-                                    />
-                                    <span class="error-message">Veuillez remplir ce champ.</span>
-                                </div>
-                                <div class="message">
-                                    <div class="input textarea u-grid-fullwidth">
-                                        <label class="input__label big-p" for="message">Message*</label>
-                                        <textarea
-                                            class="input__element"
-                                            name="message"
-                                            id="message"
-                                            placeholder="Écrivez votre message ici"
-                                            required
-                                            maxlength="500"
-                                        ></textarea>
-                                        <span class="error-message">Veuillez remplir ce champ.</span>
-                                    </div>
-                                </div>
+                            <div class="input">
+                                <label class="input__label big-p" for="last-name">Nom*</label>
+                                <input class="input__element" type="text" name="last-name" id="last-name" placeholder="ex.: Corach" required />
+                                <span class="error-message">Veuillez remplir ce champ.</span>
                             </div>
-                        </fieldset>
-                        <footer class="form__footer">
-                            <a class="btn-text button-p">Soumettre</a>
-                        </footer>
-                    </div>
-                    <div class="form__confirmation">
-                        <h3>Merci</h3>
-                        <h5>Votre formulaire a bien été envoyé.</h5>
-                    </div>
-                </form>
-            </div>
+                        </div>
+                        <div class="input">
+                            <label class="input__label big-p" for="email">Adresse courriel*</label>
+                            <input class="input__element" type="email" name="email" id="email" placeholder="ex.: nom@courriel.com" required />
+                            <span class="error-message">Veuillez remplir ce champ.</span>
+                        </div>
+                        <div class="message">
+                            <div class="input textarea u-grid-fullwidth">
+                                <label class="input__label big-p" for="message">Message*</label>
+                                <textarea
+                                    class="input__element"
+                                    name="message"
+                                    id="message"
+                                    placeholder="Écrivez votre message ici"
+                                    required
+                                    maxlength="500"
+                                ></textarea>
+                                <span class="error-message">Veuillez remplir ce champ.</span>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <footer class="form__footer">
+                        <a class="btn-text button-p">Envoyer</a>
+                    </footer>
+                </div>
+                <div class="form__confirmation">
+                    <h3>Merci</h3>
+                    <h5>Votre formulaire a bien été envoyé.</h5>
+                </div>
+            </form>
         </div>
-        <p class="credits">Tous droits réservés © 2025 Juan Corach</p>
     </div>
 </section>

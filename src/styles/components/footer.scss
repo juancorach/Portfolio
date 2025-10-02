@@ -10,6 +10,19 @@
         );
     }
 
+    .buttons{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .socials{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+    }
+
     .credits {
         display: flex;
         justify-content: space-between;

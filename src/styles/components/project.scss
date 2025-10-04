@@ -1,0 +1,117 @@
+.hero-project {
+    position: relative;
+
+    .wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 120px;
+    }
+
+    .hero__media {
+        img {
+            rotate: -8deg;
+        }
+    }
+
+    .hero__bg {
+        position: absolute;
+        top: 5%;
+        left: 0;
+        z-index: -1;
+        filter: brightness(0.6);
+    }
+}
+
+.project-info {
+    h2 {
+        padding-top: var(--spacing-xl);
+    }
+
+    .context {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: var(--spacing-xl);
+        padding: var(--spacing-lg) 0;
+
+        p {
+            padding: var(--spacing-sm) 0 var(--spacing-md) 0;
+        }
+    }
+
+    .extra-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        .line {
+            width: 100%;
+            height: 3px;
+            background-image: linear-gradient(
+                to right,
+                #fff,
+                rgba(255, 255, 255, 0)
+            );
+        }
+
+        p {
+            padding-top: 8px;
+            margin: 0;
+        }
+    }
+}
+
+.section.creation {
+    .wrapper {
+        display: flex;
+        gap: var(--spacing-md);
+    }
+
+    .section__content {
+        max-width: 708px;
+    }
+
+    .step {
+        padding: var(--spacing-md);
+        padding-bottom: var(--spacing-lg);
+        border-radius: var(--spacing-md);
+        background-color: rgba(60, 59, 59, 0.4);
+        border: none;
+        backdrop-filter: blur(3px);
+        -webkit-backdrop-filter: blur(10px);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
+            inset 0 1px 0 rgba(255, 255, 255, 0.3);
+
+        .step__media {
+            img {
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .step__content {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+.next-project {
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .project {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: var(--spacing-xxl);
+        padding-bottom: var(--spacing-xl);
+    }
+}

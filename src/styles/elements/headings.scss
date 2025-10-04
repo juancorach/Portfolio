@@ -34,7 +34,9 @@ h2 {
 }
 
 h3 {
+    font-family: var(--font-primary);
     font-size: var(--font-size-h3);
+    font-weight: 500;
 
     span {
         color: var(--color-primary);

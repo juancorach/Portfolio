@@ -91,7 +91,110 @@
     }
 }
 
-.design-projects{
+.section {
+    position: relative;
+    // outline: pink solid 1px;
+    // outline-offset: -4px;
+    .wrapper {
+        display: flex;
+        align-items: flex-start;
+        gap: 120px;
+    }
+    .img:nth-child(1n) {
+        top: 70%;
+        left: 65%;
+    }
+    .img:nth-child(2n + 1) {
+        top: 5%;
+        left: 10%;
+    }
+    .img:nth-child(3n + 1) {
+        top: 10%;
+        left: 40%;
+    }
+    .img:nth-child(4n + 1) {
+        top: 90%;
+        left: 20%;
+    }
+}
+.section--horiz {
     display: flex;
     overflow: hidden;
+    .section__content {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+    }
+}
+.img {
+    position: absolute;
+    // display: none;
+    object-fit: cover;
+    object-position: top;
+
+    &--large {
+        aspect-ratio: 16 / 9;
+        width: 30%;
+        z-index: 3;
+    }
+    &--medium {
+        aspect-ratio: 1 / 1;
+        width: 25%;
+
+        z-index: 1;
+    }
+    &--small {
+        width: 15%;
+        z-index: 1;
+    }
+}
+
+.title-projects {
+    .wrapper {
+        height: 20vh;
+        display: flex;
+        align-items: center;
+    }
+}
+
+.section__content .card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: var(--spacing-xxl);
+
+    &:hover {
+        color: white;
+    }
+
+    .surtitle {
+        padding: 0;
+    }
+
+    .categories {
+        display: flex;
+        gap: var(--spacing-sm);
+        padding-top: 8px;
+
+        .category {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px var(--spacing-sm);
+            background: rgba(60, 59, 59, 0.4);
+            border-radius: var(--spacing-xl);
+            backdrop-filter: blur(3px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+        }
+    }
+
+    p {
+        padding: var(--spacing-md) 0;
+        margin: 0;
+    }
 }

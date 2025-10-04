@@ -10,12 +10,12 @@
         );
     }
 
-    .buttons{
+    .buttons {
         display: flex;
         justify-content: space-between;
         align-items: center;
 
-        .socials{
+        .socials {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -28,5 +28,9 @@
         justify-content: space-between;
         align-items: center;
         padding-top: var(--spacing-xxl);
+    }
+
+    .download {
+        text-decoration: underline;
     }
 }

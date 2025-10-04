@@ -120,6 +120,18 @@
 .section--horiz {
     display: flex;
     overflow: hidden;
+
+    .wrapper {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .cards {
+        display: flex;
+        gap: var(--spacing-md);
+        padding-top: var(--spacing-md);
+    }
+
     .section__content {
         width: 100%;
         display: flex;
@@ -147,14 +159,6 @@
     &--small {
         width: 15%;
         z-index: 1;
-    }
-}
-
-.title-projects {
-    .wrapper {
-        height: 20vh;
-        display: flex;
-        align-items: center;
     }
 }
 

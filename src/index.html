@@ -1,76 +1,83 @@
-{% include '_partials/_header.html' %}
+<div id="smooth-wrapper" data-component="Scroller" data-pin-items="true">
+    <div id="smooth-content">
+        {% include '_partials/_header.html' %}
 
-<section class="hero">
-    <div class="wrapper">
-        <div class="hero__content">
-            <p class="surtitle">Juan Corach</p>
-            <h1 class="tagline">
-                Designer
-                <span>
-                    <span>polyvalent</span>
-                    <span class="space">graphique</span>
-                    <span>web</span>
-                    <span>vidéo</span>
-                </span>
-            </h1>
-            <div class="line"></div>
-        </div>
-        <a href="projects.html" class="btn-circle">
-            <div class="text">
-                <p class="big-p">VOIR</p>
-                <span>PROJETS</span>
+        <section class="hero">
+            <div class="wrapper">
+                <div class="hero__content">
+                    <p class="surtitle" data-lag="0.2" alt="" data-speed="0.9">Juan Corach</p>
+                    <h1 class="tagline" data-lag="0.3" alt="" data-speed="0.85">
+                        Designer
+                        <span>
+                            <span>polyvalent</span>
+                            <span class="space">graphique</span>
+                            <span>web</span>
+                            <span>vidéo</span>
+                        </span>
+                    </h1>
+                    <div class="line" data-lag="0.3" alt="" data-speed="0.85"></div>
+                </div>
+                <a href="projects.html" class="btn-circle" data-lag="0.25" alt="" data-speed="0.75">
+                    <div class="text">
+                        <p class="big-p">VOIR</p>
+                        <span>PROJETS</span>
+                    </div>
+                </a>
             </div>
-        </a>
-    </div>
-    <div class="hero__media">
-        <img src="assets/images/fond-hero.png" alt="Image de fond" />
-    </div>
-</section>
-
-<section class="projects">
-    <div class="wrapper">
-        <div class="projects__content">
-            <h2>
-                Mes
-                <span>projets</span>
-            </h2>
-        </div>
-        <div class="projects__media">
-            <a href="projects.html#design" class="project">
-                <img src="assets/images/design-card.png" alt="Projet design" />
-            </a>
-            <a href="projects.html#web" class="project">
-                <img src="assets/images/web-card.png" alt="Projet web" />
-            </a>
-            <a href="projects.html#video" class="project">
-                <img src="assets/images/video-card.png" alt="Projet vidéo" />
-            </a>
-            <div class="category">
-                <p class="design">Design</p>
-                <p class="web">Web</p>
-                <p class="video">Vidéo</p>
+            <div class="hero__media">
+                <img src="assets/images/fond-hero.png" alt="Image de fond" />
             </div>
-        </div>
-        <a href="projects.html" class="btn-text button-p">Voir tous les projets</a>
-    </div>
-</section>
+        </section>
 
-<section class="apropos">
-    <div class="wrapper">
-        <div class="apropos__content">
-            <h2>
-                À
-                <span>propos</span>
-            </h2>
-            <p>
-                Ici, vous découvrirez qui je suis, mes compétences et mes centres d’intérêt. Vous en apprendrez davantage sur mon parcours, mes forces ainsi que
-                sur ce qui me passionne.
-            </p>
-            <a href="about.html" class="btn-text button-p">En savoir plus</a>
-        </div>
-        <div class="apropos__media">
-            <img src="assets/images/photo-jc.png" alt="Photo de Juan Corach" />
-        </div>
+        <section class="projects">
+            <div class="wrapper">
+                <div class="projects__content">
+                    <h2>
+                        Mes
+                        <span>projets</span>
+                    </h2>
+                </div>
+                <div class="projects__media">
+                    <a href="projects.html#design" class="project">
+                        <img src="assets/images/design-card.png" alt="Projet design" />
+                    </a>
+                    <a href="projects.html#web" class="project">
+                        <img src="assets/images/web-card.png" alt="Projet web" />
+                    </a>
+                    <a href="projects.html#video" class="project">
+                        <img src="assets/images/video-card.png" alt="Projet vidéo" />
+                    </a>
+                    <div class="category">
+                        <p class="design">Design</p>
+                        <p class="web">Web</p>
+                        <p class="video">Vidéo</p>
+                    </div>
+                </div>
+                <a href="projects.html" class="btn-text button-p">Voir tous les projets</a>
+            </div>
+        </section>
+
+        <section class="apropos">
+            <div class="wrapper">
+                <div class="apropos__content">
+                    <h2>
+                        À
+                        <span>propos</span>
+                    </h2>
+                    <p>
+                        Ici, vous découvrirez qui je suis, mes compétences et mes centres d’intérêt. Vous en apprendrez davantage sur mon parcours, mes forces ainsi que
+                        sur ce qui me passionne.
+                    </p>
+                    <a href="about.html" class="btn-text button-p">En savoir plus</a>
+                </div>
+                <div class="apropos__media">
+                    <img src="assets/images/photo-jc.png" alt="Photo de Juan Corach" />
+                </div>
+            </div>
+        </section>
+
+        {% include '_partials/_footer.html' %}
     </div>
-</section>
-{% include '_partials/_footer.html' %}
+</div>
+
+<div class="bg"></div>

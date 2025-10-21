@@ -114,6 +114,7 @@
             gap: 8px;
 
             .software {
+                position: relative;
                 display: inline-flex;
                 align-items: center;
                 justify-content: center;
@@ -126,7 +127,7 @@
                 box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
                     inset 0 1px 0 rgba(255, 255, 255, 0.3);
                 transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-                overflow: hidden;
+                overflow: visible;
                 animation: glassPulse 3s infinite ease-in-out;
 
                 &:hover {
@@ -139,6 +140,45 @@
                         inset 0 1px 0 rgba(255, 255, 255, 0.4),
                         0 0 0 1px rgba(255, 255, 255, 0.3);
                     animation: none;
+                }
+
+                .tooltiptext {
+                    visibility: hidden;
+                    opacity: 0;
+                    width: max-content;
+                    min-width: 80px;
+                    background-color: var(--color-dark);
+                    color: #ffffff;
+                    text-align: center;
+                    padding: 8px 12px;
+                    border-radius: 6px;
+                    position: absolute;
+                    z-index: 10;
+                    bottom: 125%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    transition: opacity 0.3s, visibility 0.3s;
+                    white-space: nowrap;
+                    font-size: 14px;
+
+                    /* Flèche pointant vers le bas */
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        top: 100%;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        border-width: 6px;
+                        border-style: solid;
+                        border-color: var(--color-dark) transparent transparent
+                            transparent;
+                    }
+                }
+
+                /* Show the tooltip text on hover */
+                &:hover .tooltiptext {
+                    visibility: visible;
+                    opacity: 1;
                 }
             }
 

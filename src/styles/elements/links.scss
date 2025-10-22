@@ -54,10 +54,29 @@ a {
         line-height: 1.2;
         z-index: 1;
 
+        .big-p {
+            font-size: typo(16px, 24px);
+        }
+
         span {
-            font-size: typo(24px, 36px);
+            font-size: typo(20px, 36px);
             font-weight: 700;
         }
+    }
+
+    @media screen and (max-width: $breakpoint-md) {
+        width: 180px;
+        height: 180px;
+    }
+
+    @media screen and (max-width: $breakpoint-sm) {
+        width: 140px;
+        height: 140px;
+    }
+
+    @media screen and (max-width: $breakpoint-xs) {
+        width: 120px;
+        height: 120px;
     }
 }
 

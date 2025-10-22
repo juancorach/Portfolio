@@ -9,13 +9,13 @@
     --font-size-content: #{typo(16px, 18px)};
 
     /// Grosseur des textes
-    --font-size-h1: #{typo(32px, 96px)};
+    --font-size-h1: #{typo(36px, 96px)};
     --font-size-h2: #{typo(32px, 80px)};
     --font-size-h3: #{typo(32px, 64px)};
 }
 
 .surtitle {
-    font-size: typo(24px, 32px);
+    font-size: typo(14px, 32px);
     font-weight: 500;
     margin: 0;
 

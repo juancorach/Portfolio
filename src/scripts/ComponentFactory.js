@@ -1,3 +1,4 @@
+import Header from './components/Header.js';
 import Carousel from './components/Carousel.js';
 import Form from './components/Form.js';
 import Scroller from './components/Scroller.js';
@@ -7,6 +8,7 @@ export default class ComponentFactory {
   constructor() {
     this.componentInstances = [];
     this.componentList = {
+      Header,
       Carousel,
       Form,
       Scroller,

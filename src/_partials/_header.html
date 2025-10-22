@@ -13,22 +13,35 @@
 
   <body>
     <!-- Header -->
-    <header class="header">
-      <div class="wrapper">
-        <a href="index.html" class="logo hover-underline">Juan C.</a>
-
-        <nav class="menu">
-          <ul>
-            <a href="about.html" class="hover-underline">
-              <li>À propos</li>
+    <header class="header" data-component="Header" data-threshold="0.3">
+        <div class="wrapper">
+            <a href="index.html" class="logo hover-underline">
+              Juan C.
             </a>
-            <a href="projects.html" class="hover-underline">
-              <li>Projets</li>
-            </a>
-            <a href="contact.html" class="hover-underline">
-              <li>Contact</li>
-            </a>
-          </ul>
-        </nav>
-      </div>
+    
+            <nav class="nav-primary">
+                <ul>
+                    <li>
+                        <a href="about.html" class="nav-primary__item hover-underline">
+                            À propos
+                        </a>
+                    </li>
+                    <li>
+                        <a href="projects.html" class="nav-primary__item hover-underline">
+                            Projets
+                        </a>
+                    </li>
+                    <li>
+                        <a href="contact.html" class="nav-primary__item hover-underline">
+                            Contact
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <button class="header__toggle js-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
     </header>

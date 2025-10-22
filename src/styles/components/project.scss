@@ -121,3 +121,9 @@
         padding-bottom: var(--spacing-xl);
     }
 }
+
+.hero-project.video {
+    .wrapper {
+        grid-template-columns: 1fr 60% !important;
+    }
+}

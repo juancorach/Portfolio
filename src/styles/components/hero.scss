@@ -1,6 +1,8 @@
 // ----- Section hero (page d'accueil) ----- //
 
 .hero {
+    position: relative;
+
     .wrapper {
         height: 90vh;
         display: flex;
@@ -84,6 +86,6 @@
         top: 5%;
         left: 0;
         z-index: -1;
-        filter: brightness(0.3);
+        filter: brightness(0.5);
     }
 }

@@ -44,19 +44,19 @@
 .hero-apropos {
     .wrapper {
         position: relative;
-        height: 90vh;
+        height: 100vh;
     }
 
     .hero__content {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        height: 87%;
+        height: 105%;
     }
 
     .hero__media {
         position: absolute;
-        height: 100vh;
+        height: 95vh;
         bottom: 0;
         right: 0;
 
@@ -67,33 +67,13 @@
         }
     }
 
-    @media screen and (max-width: $breakpoint-lg) {
-        .hero__content {
-            height: 75%;
-        }
-
-        .hero__media {
-            height: 90vh;
-        }
-    }
-
     @media screen and (max-width: $breakpoint-ml) {
         .hero__content {
-            height: 25%;
+            height: 45%;
         }
 
         .hero__media {
-            height: 80vh;
-        }
-    }
-
-    @media screen and (max-width: $breakpoint-md) {
-        .hero__content {
-            height: 32%;
-        }
-
-        .hero__media {
-            height: 75vh;
+            height: 78vh;
         }
     }
 
@@ -102,21 +82,11 @@
             text-align: center;
             align-items: center;
         }
-
-        .hero__media {
-            height: 76vh;
-        }
     }
 
     @media screen and (max-width: $breakpoint-xs) {
         .hero__content {
-            text-align: center;
-            align-items: center;
-            height: 29%;
-        }
-
-        .hero__media {
-            height: 76vh;
+            height: 42%;
         }
     }
 }

@@ -7,10 +7,71 @@
         grid-template-columns: 1fr 65%;
         gap: var(--spacing-sm);
         padding-bottom: var(--spacing-md);
-    }
 
-    .surtitle {
-        padding-bottom: 8px;
+        @media screen and (max-width: $breakpoint-md) {
+            grid-template-columns: 1fr;
+
+            .info {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                padding-bottom: var(--spacing-lg);
+
+                .reseaux-sociaux {
+                    padding: 0;
+                }
+
+                .credits {
+                    display: none;
+                }
+            }
+
+            .contact-bottom {
+                display: flex;
+                text-align: center;
+            }
+        }
+
+        @media screen and (max-width: $breakpoint-sm) {
+            .info {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: var(--spacing-lg);
+                padding-bottom: var(--spacing-lg);
+
+                .details {
+                    align-items: center;
+
+                    .surtitle {
+                        width: 100%;
+                    }
+                }
+
+                .reseaux-sociaux {
+                    padding: 0;
+                }
+
+                .credits {
+                    display: none;
+                }
+            }
+
+            .form__body .names {
+                gap: var(--spacing-sm);
+            }
+        }
+
+        @media screen and (max-width: $breakpoint-xs) {
+            .form__body fieldset {
+                .names {
+                    display: flex;
+                    flex-direction: column;
+                    gap: var(--spacing-xs);
+                }
+            }
+        }
     }
 
     .details {
@@ -42,14 +103,19 @@
         padding-top: 120px;
 
         .credits {
-            padding-top: var(--spacing-xxl);
+            padding-top: 80px;
             margin: 0;
+
+            @media screen and (max-width: $breakpoint-ml) {
+                padding-top: 100px;
+            }
         }
     }
 
     .socials {
         display: flex;
         gap: var(--spacing-sm);
+        padding-top: var(--spacing-md);
     }
 
     .contact {
@@ -70,6 +136,26 @@
             }
         }
     }
+
+    .surtitle {
+        font-size: typo(24px, 32px);
+    }
+
+    .contact-bottom {
+        display: none;
+    }
+
+    @media screen and (max-width: $breakpoint-md) {
+        .form__footer {
+            justify-content: center;
+        }
+
+        .contact-bottom {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+        }
+    }
 }
 
 .form {
@@ -79,6 +165,7 @@
     fieldset {
         display: flex;
         flex-direction: column;
+        gap: var(--spacing-xs);
         border: none;
         padding: 0;
         padding-bottom: var(--spacing-md);

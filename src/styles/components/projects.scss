@@ -193,7 +193,6 @@
     .wrapper {
         flex-direction: column;
         gap: 0;
-        width: 100%;
     }
 
     .cards {
@@ -209,7 +208,6 @@
     }
 
     .section__content {
-        width: 100vw;
         display: flex;
         align-items: center;
         flex-shrink: 0;

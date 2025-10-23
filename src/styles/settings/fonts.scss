@@ -27,6 +27,10 @@
 .big-p {
     font-size: typo(20px, 24px);
     margin: 0;
+
+    span {
+        color: var(--color-primary);
+    }
 }
 
 .button-p {

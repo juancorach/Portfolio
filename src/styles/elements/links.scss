@@ -158,6 +158,24 @@ a {
             0 0 0 1px rgba(255, 255, 255, 0.3);
         animation: none;
     }
+
+    @media screen and (max-width: $breakpoint-ml) {
+        padding: 16px;
+
+        .icon {
+            width: 27px;
+            height: 27px;
+        }
+    }
+
+    @media screen and (max-width: $breakpoint-sm) {
+        padding: 14px;
+
+        .icon {
+            width: 26px;
+            height: 26px;
+        }
+    }
 }
 
 @keyframes glassPulse {

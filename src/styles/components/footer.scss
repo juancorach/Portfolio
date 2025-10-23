@@ -20,6 +20,22 @@
             justify-content: center;
             align-items: center;
             gap: var(--spacing-sm);
+
+            @media screen and (max-width: $breakpoint-md) {
+                gap: 12px;
+            }
+
+            @media screen and (max-width: $breakpoint-md) {
+                gap: 10px;
+            }
+
+            @media screen and (max-width: $breakpoint-sm) {
+                gap: 8px;
+            }
+
+            @media screen and (max-width: $breakpoint-xs) {
+                gap: 4px;
+            }
         }
     }
 
@@ -28,9 +44,18 @@
         justify-content: space-between;
         align-items: center;
         padding-top: var(--spacing-xxl);
-    }
 
-    .download {
-        text-decoration: underline;
+        .download {
+            text-decoration: underline;
+        }
+
+        @media screen and (max-width: $breakpoint-sm) {
+            flex-direction: column;
+            padding-top: var(--spacing-xl);
+
+            .download {
+                padding-bottom: var(--spacing-md);
+            }
+        }
     }
 }

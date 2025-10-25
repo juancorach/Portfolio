@@ -20,13 +20,36 @@ export default class Form {
     this.element.addEventListener('submit', this.onSubmit.bind(this));
   }
 
-  onSubmit(event) {
+  async onSubmit(event) {
     event.preventDefault();
 
     if (this.validate()) {
       console.log('success');
-      // envoi ajax du formulaire
-      this.showConfirmation();
+
+      // Récupérer les données du formulaire
+      const formData = new FormData(this.element);
+
+      try {
+        // Envoyer les données à Web3Forms
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: formData,
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+          console.log('Email envoyé avec succès');
+          this.showConfirmation();
+          this.element.reset(); // Réinitialiser le formulaire
+        } else {
+          console.error("Erreur lors de l'envoi:", data);
+          alert('Une erreur est survenue. Veuillez réessayer.');
+        }
+      } catch (error) {
+        console.error('Erreur réseau:', error);
+        alert("Impossible d'envoyer le message. Vérifiez votre connexion.");
+      }
     } else {
       console.log('fail');
     }

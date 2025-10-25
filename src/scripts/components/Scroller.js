@@ -10,9 +10,11 @@ export default class Scroller {
       hasPinItems: false,
     };
     this.element = element;
+    this.horizScrollTriggers = []; // Stocke les ScrollTriggers horizontaux
 
     this.setOptions();
     this.init();
+    this.handleResize();
   }
 
   init() {
@@ -72,25 +74,61 @@ export default class Scroller {
   // SECTION HORIZONTAL
 
   initHoriz() {
+    // Détruire les anciens ScrollTriggers
+    this.killHorizScrollTriggers();
+
+    // Désactiver sur mobile
+    if (window.innerWidth <= 768) {
+      return;
+    }
+
     const sectionsHoriz = this.element.querySelectorAll('.js-horiz');
-    
+
     sectionsHoriz.forEach((sectionHoriz) => {
       const panels = sectionHoriz.querySelectorAll('.js-panel');
       const nbPanels = panels.length - 1;
       const buffer = 200;
 
-      gsap.to(panels, {
+      const tween = gsap.to(panels, {
         xPercent: -100 * nbPanels,
         ease: 'none',
         scrollTrigger: {
           pin: true,
           trigger: sectionHoriz,
           scrub: 1,
-          snap: 1 / nbPanels,
           end: () => '+=' + (sectionHoriz.offsetWidth + buffer),
           markers: false,
         },
       });
+
+      // Stocker le ScrollTrigger
+      this.horizScrollTriggers.push(tween.scrollTrigger);
+    });
+  }
+
+  killHorizScrollTriggers() {
+    // Détruire tous les ScrollTriggers horizontaux
+    this.horizScrollTriggers.forEach((st) => {
+      if (st) st.kill();
+    });
+    this.horizScrollTriggers = [];
+
+    // Réinitialiser la position des panels
+    const sectionsHoriz = this.element.querySelectorAll('.js-horiz');
+    sectionsHoriz.forEach((sectionHoriz) => {
+      const panels = sectionHoriz.querySelectorAll('.js-panel');
+      gsap.set(panels, { clearProps: 'all' });
+    });
+  }
+
+  handleResize() {
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        this.initHoriz();
+        ScrollTrigger.refresh();
+      }, 250);
     });
   }
 

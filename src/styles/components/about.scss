@@ -69,29 +69,43 @@
 
     @media screen and (max-width: $breakpoint-ml) {
         .hero__content {
-            height: 45%;
+            height: 95%;
+            max-width: 500px;
+        }
+    }
+
+    @media screen and (max-width: $breakpoint-ml) {
+        .hero__content {
+            height: 100%;
+            max-width: 500px;
         }
 
         .hero__media {
-            height: 78vh;
+            height: 85vh;
         }
     }
 
     @media screen and (max-width: $breakpoint-sm) {
         .hero__content {
+            height: 30%;
             text-align: center;
             align-items: center;
+            max-width: none;
         }
     }
 
     @media screen and (max-width: $breakpoint-xs) {
-        .hero__content {
-            height: 42%;
+        .hero__media {
+            width: 100%;
         }
     }
 }
 
 .profil {
+    .wrapper {
+        padding-top: var(--spacing-xxl);
+    }
+
     h2 {
         padding-bottom: var(--spacing-md);
     }
@@ -228,7 +242,6 @@
                     white-space: nowrap;
                     font-size: 14px;
 
-                    /* Flèche pointant vers le bas */
                     &::after {
                         content: '';
                         position: absolute;
@@ -242,7 +255,6 @@
                     }
                 }
 
-                /* Show the tooltip text on hover */
                 &:hover .tooltiptext {
                     visibility: visible;
                     opacity: 1;
@@ -318,28 +330,45 @@
         overflow: hidden;
         border-radius: 24px;
         margin: 0;
-        max-height: 680px;
+        height: 680px; // Hauteur fixe pour desktop
+
+        @media screen and (max-width: $breakpoint-md) {
+            height: 520px; // Hauteur fixe pour mobile/tablette
+        }
 
         .swiper-wrapper {
             position: relative;
-            max-height: 680px;
+            height: 100%;
         }
 
         .swiper-slide {
-            max-height: 680px;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
         }
 
-        img {
-            object-fit: cover;
+        img,
+        video {
             width: 100%;
             height: 100%;
+            object-fit: cover; // IMPORTANT: Force le crop pour remplir
+            object-position: center;
+            image-rendering: -webkit-optimize-contrast; // Safari
+            image-rendering: crisp-edges; // Pour les autres navigateurs
+            image-rendering: high-quality; // Fallback
+            backface-visibility: hidden; // Améliore le rendu
+            transform: translateZ(0); // Force l'accélération GPU
         }
     }
 
     .swiper-pagination {
         position: absolute;
         bottom: 16px;
-        left: 25%;
+        left: 50%; // Centré horizontalement
+        transform: translateX(-50%); // Parfaitement centré
         display: flex;
         justify-content: center;
         align-items: center;
@@ -352,6 +381,7 @@
         box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
             inset 0 1px 0 rgba(255, 255, 255, 0.3);
         padding: 8px;
+        z-index: 10;
 
         .swiper-pagination-bullet {
             background-color: var(--color-white);
@@ -370,7 +400,7 @@
             grid-template-columns: repeat(2, 1fr);
 
             .swiper {
-                max-width: 700px;
+                max-width: 71vw;
             }
 
             .right {
@@ -398,6 +428,11 @@
         .grid {
             grid-template-columns: 1fr;
 
+            .swiper {
+                max-width: 96vw;
+                height: 520px; // Hauteur optimisée pour mobile
+            }
+
             .left {
                 flex-direction: row;
 
@@ -418,7 +453,8 @@
             grid-template-columns: 1fr;
 
             .swiper {
-                max-width: 327px;
+                max-width: 94vw;
+                height: 480px; // Hauteur réduite pour petits mobiles
             }
 
             .left {
@@ -432,6 +468,28 @@
 
             .right {
                 flex-direction: column;
+            }
+        }
+    }
+
+    @media screen and (max-width: 575px) {
+        .grid {
+            grid-template-columns: 1fr;
+
+            .swiper {
+                max-width: 92vw;
+                height: 480px; // Hauteur réduite pour petits mobiles
+            }
+        }
+    }
+
+    @media screen and (max-width: $breakpoint-xs) {
+        .grid {
+            grid-template-columns: 1fr;
+
+            .swiper {
+                max-width: 89vw;
+                height: 480px; // Hauteur réduite pour petits mobiles
             }
         }
     }

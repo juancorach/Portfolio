@@ -10,18 +10,38 @@ export default class Scroller {
       hasPinItems: false,
     };
     this.element = element;
-    this.horizScrollTriggers = []; // Stocke les ScrollTriggers horizontaux
+    this.horizScrollTriggers = [];
+    this.smoother = null;
+    this.isMobile = this.checkIfMobile();
 
     this.setOptions();
     this.init();
     this.handleResize();
   }
 
+  checkIfMobile() {
+    // Détecte si on est sur mobile/tablette
+    return (
+      window.innerWidth <= 1024 ||
+      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      )
+    );
+  }
+
   init() {
-    const scroller = ScrollSmoother.create({
+    // Désactiver ScrollSmoother sur mobile/tablette
+    if (this.isMobile) {
+      console.log('Mobile détecté - ScrollSmoother désactivé');
+      // Utiliser le scroll natif
+      return;
+    }
+
+    // Activer ScrollSmoother uniquement sur desktop
+    this.smoother = ScrollSmoother.create({
       smooth: 2,
       effects: true,
-      smoothTouch: 0.1,
+      smoothTouch: false, // IMPORTANT: désactiver smoothTouch
       onUpdate: this.onUpdateScroll.bind(this),
       onStop: this.onStopScroll.bind(this),
       ease: 'expo.out',
@@ -29,16 +49,19 @@ export default class Scroller {
   }
 
   onUpdateScroll(self) {
-    if (this.options.hasSkew) this.updateSkew(self);
+    if (this.options.hasSkew && !this.isMobile) this.updateSkew(self);
   }
+
   onStopScroll(self) {
-    if (this.options.hasSkew) this.stopSkew(self);
+    if (this.options.hasSkew && !this.isMobile) this.stopSkew(self);
   }
 
   // SKEW CONTROLS
 
   initSkew() {
-    this.skewSetter = gsap.quickTo('img', 'skewY');
+    if (!this.isMobile) {
+      this.skewSetter = gsap.quickTo('img', 'skewY');
+    }
   }
 
   updateSkew(self) {
@@ -66,7 +89,7 @@ export default class Scroller {
         trigger: pinnedItem.parentElement,
         start: 'center center',
         end: '80% center',
-        markers: true,
+        markers: false,
       });
     }
   }
@@ -77,8 +100,8 @@ export default class Scroller {
     // Détruire les anciens ScrollTriggers
     this.killHorizScrollTriggers();
 
-    // Désactiver sur mobile
-    if (window.innerWidth <= 768) {
+    // Désactiver sur mobile et tablette
+    if (window.innerWidth <= 1024) {
       return;
     }
 
@@ -126,6 +149,19 @@ export default class Scroller {
     window.addEventListener('resize', () => {
       clearTimeout(resizeTimer);
       resizeTimer = setTimeout(() => {
+        const wasMobile = this.isMobile;
+        this.isMobile = this.checkIfMobile();
+
+        // Si on passe de desktop à mobile ou vice-versa
+        if (wasMobile !== this.isMobile) {
+          // Détruire et recréer le smoother si nécessaire
+          if (this.smoother) {
+            this.smoother.kill();
+            this.smoother = null;
+          }
+          this.init();
+        }
+
         this.initHoriz();
         ScrollTrigger.refresh();
       }, 250);

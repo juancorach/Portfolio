@@ -112,6 +112,8 @@
             .context__content {
                 @media (max-width: 768px) {
                     order: 2;
+                    display: flex;
+                    flex-direction: column;
                 }
             }
 
@@ -120,6 +122,14 @@
 
                 @media (max-width: 768px) {
                     padding: var(--spacing-xs) 0 var(--spacing-sm) 0;
+                }
+            }
+
+            .btn-text {
+                @media (max-width: 768px) {
+                    margin: 0 auto;
+                    display: inline-block;
+                    text-align: center;
                 }
             }
         }
@@ -147,6 +157,10 @@
             .info {
                 flex: 1;
                 min-width: 200px;
+
+                @media (max-width: 768px) {
+                    width: 100%;
+                }
             }
 
             .line {
@@ -181,7 +195,7 @@
         }
 
         h2 {
-            padding: var(--spacing-xl) 0 var(--spacing-lg) 0;
+            padding: var(--spacing-lg) 0;
 
             @media (max-width: 768px) {
                 padding: var(--spacing-lg) 0 var(--spacing-md) 0;
@@ -192,6 +206,7 @@
             display: flex;
             flex-wrap: nowrap;
             width: fit-content;
+            height: 100%;
 
             @media (max-width: 768px) {
                 flex-direction: column;
@@ -220,6 +235,7 @@
     .section.creation {
         .section__content {
             max-width: 708px;
+            height: 100%;
 
             @media (max-width: 768px) {
                 max-width: 100%;
@@ -259,7 +275,7 @@
                 height: 100%;
 
                 .surtitle {
-                    padding: var(--spacing-lg) 0 var(--spacing-sm) 0;
+                    padding: var(--spacing-md) 0 var(--spacing-xs) 0;
 
                     @media (max-width: 768px) {
                         padding: var(--spacing-md) 0 var(--spacing-xs) 0;

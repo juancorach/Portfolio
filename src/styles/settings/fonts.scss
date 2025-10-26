@@ -11,7 +11,7 @@
     /// Grosseur des textes
     --font-size-h1: #{typo(36px, 96px)};
     --font-size-h2: #{typo(32px, 80px)};
-    --font-size-h3: #{typo(32px, 64px)};
+    --font-size-h3: #{typo(24px, 64px)};
 }
 
 .surtitle {
@@ -26,6 +26,7 @@
 
 .big-p {
     font-size: typo(20px, 24px);
+    font-weight: 500;
     margin: 0;
 
     span {

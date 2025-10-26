@@ -244,7 +244,7 @@
 
             @media (max-width: 768px) {
                 flex-direction: column;
-                gap: var(--spacing-lg);
+                gap: var(--spacing-xxl);
                 padding: var(--spacing-lg) 0 var(--spacing-xl) 0;
             }
 
@@ -305,7 +305,7 @@
 
         @media (max-width: 768px) {
             grid-template-columns: 1fr;
-            gap: var(--spacing-lg);
+            gap: var(--spacing-md);
         }
 
         &:hover {

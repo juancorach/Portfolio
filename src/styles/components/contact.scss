@@ -1,6 +1,7 @@
 .contact {
     position: relative;
     z-index: 5;
+    padding-top: 100px;
 
     .grid {
         display: grid;
@@ -15,7 +16,7 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: flex-start;
-                padding-bottom: var(--spacing-lg);
+                padding: var(--spacing-lg) 0;
 
                 .reseaux-sociaux {
                     padding: 0;

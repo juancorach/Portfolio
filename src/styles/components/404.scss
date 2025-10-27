@@ -1,0 +1,26 @@
+/* ==========================================================================
+   404 / component
+   ========================================================================== */
+
+.error-404 {
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        height: 63vh;
+
+        p {
+            max-width: 60%;
+            padding-bottom: var(--spacing-md);
+
+            @media screen and (max-width: $breakpoint-md) {
+                padding-bottom: var(--spacing-sm);
+            }
+
+            @media screen and (max-width: $breakpoint-xs) {
+                padding-bottom: var(--spacing-xs);
+            }
+        }
+    }
+}

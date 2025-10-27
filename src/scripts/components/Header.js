@@ -66,7 +66,6 @@ export default class Header {
     const toggle = this.element.querySelector('.js-toggle');
     toggle.addEventListener('click', this.onToggleNav.bind(this));
 
-    // NOUVEAU : Fermez le menu quand on clique sur un lien de navigation
     const navLinks = this.element.querySelectorAll('.nav-primary__item');
     navLinks.forEach((link) => {
       link.addEventListener('click', this.closeNav.bind(this));
@@ -77,7 +76,6 @@ export default class Header {
     this.html.classList.toggle('nav-is-active');
   }
 
-  // NOUVELLE MÉTHODE : Fermer le menu
   closeNav() {
     this.html.classList.remove('nav-is-active');
   }

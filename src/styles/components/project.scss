@@ -341,7 +341,6 @@
     }
 }
 
-// Media queries supplémentaires pour les très petits écrans
 @media (max-width: 480px) {
     .page-project {
         .hero-project {
@@ -369,7 +368,6 @@
     }
 }
 
-// Media queries pour tablettes en mode paysage
 @media (min-width: 769px) and (max-width: 1024px) {
     .page-project {
         .hero-project {

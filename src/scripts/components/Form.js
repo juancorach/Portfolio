@@ -26,11 +26,9 @@ export default class Form {
     if (this.validate()) {
       console.log('success');
 
-      // Récupérer les données du formulaire
       const formData = new FormData(this.element);
 
       try {
-        // Envoyer les données à Web3Forms
         const response = await fetch('https://api.web3forms.com/submit', {
           method: 'POST',
           body: formData,
@@ -41,7 +39,7 @@ export default class Form {
         if (data.success) {
           console.log('Email envoyé avec succès');
           this.showConfirmation();
-          this.element.reset(); // Réinitialiser le formulaire
+          this.element.reset();
         } else {
           console.error("Erreur lors de l'envoi:", data);
           alert('Une erreur est survenue. Veuillez réessayer.');

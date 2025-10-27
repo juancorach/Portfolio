@@ -20,7 +20,6 @@ export default class Scroller {
   }
 
   checkIfMobile() {
-    // Détecte si on est sur mobile/tablette
     return (
       window.innerWidth <= 1024 ||
       /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
@@ -30,22 +29,22 @@ export default class Scroller {
   }
 
   init() {
-    // Désactiver ScrollSmoother sur mobile/tablette
     if (this.isMobile) {
       console.log('Mobile détecté - ScrollSmoother désactivé');
-      // Utiliser le scroll natif
+      this.handleAnchors();
       return;
     }
 
-    // Activer ScrollSmoother uniquement sur desktop
     this.smoother = ScrollSmoother.create({
       smooth: 2,
       effects: true,
-      smoothTouch: false, // IMPORTANT: désactiver smoothTouch
+      smoothTouch: false,
       onUpdate: this.onUpdateScroll.bind(this),
       onStop: this.onStopScroll.bind(this),
       ease: 'expo.out',
     });
+
+    this.handleAnchors();
   }
 
   onUpdateScroll(self) {
@@ -56,7 +55,7 @@ export default class Scroller {
     if (this.options.hasSkew && !this.isMobile) this.stopSkew(self);
   }
 
-  // SKEW CONTROLS
+  // Skew controls
 
   initSkew() {
     if (!this.isMobile) {
@@ -77,7 +76,7 @@ export default class Scroller {
     this.skewSetter(0);
   }
 
-  // PIN CONTROLS
+  // Pin controls
 
   initPins() {
     const pinnedItems = this.element.querySelectorAll('.js-pinned');
@@ -94,13 +93,11 @@ export default class Scroller {
     }
   }
 
-  // SECTION HORIZONTAL
+  // Section horizontal
 
   initHoriz() {
-    // Détruire les anciens ScrollTriggers
     this.killHorizScrollTriggers();
 
-    // Désactiver sur mobile et tablette
     if (window.innerWidth <= 1024) {
       return;
     }
@@ -124,19 +121,16 @@ export default class Scroller {
         },
       });
 
-      // Stocker le ScrollTrigger
       this.horizScrollTriggers.push(tween.scrollTrigger);
     });
   }
 
   killHorizScrollTriggers() {
-    // Détruire tous les ScrollTriggers horizontaux
     this.horizScrollTriggers.forEach((st) => {
       if (st) st.kill();
     });
     this.horizScrollTriggers = [];
 
-    // Réinitialiser la position des panels
     const sectionsHoriz = this.element.querySelectorAll('.js-horiz');
     sectionsHoriz.forEach((sectionHoriz) => {
       const panels = sectionHoriz.querySelectorAll('.js-panel');
@@ -152,9 +146,7 @@ export default class Scroller {
         const wasMobile = this.isMobile;
         this.isMobile = this.checkIfMobile();
 
-        // Si on passe de desktop à mobile ou vice-versa
         if (wasMobile !== this.isMobile) {
-          // Détruire et recréer le smoother si nécessaire
           if (this.smoother) {
             this.smoother.kill();
             this.smoother = null;
@@ -165,6 +157,44 @@ export default class Scroller {
         this.initHoriz();
         ScrollTrigger.refresh();
       }, 250);
+    });
+  }
+
+  handleAnchors() {
+    const hash = window.location.hash;
+
+    if (hash) {
+      setTimeout(() => {
+        const target = document.querySelector(hash);
+
+        if (target) {
+          if (this.smoother) {
+            this.smoother.scrollTo(target, true, 'top top');
+          } else {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }
+      }, 100);
+    }
+
+    document.querySelectorAll('a[href*="#"]').forEach((anchor) => {
+      anchor.addEventListener('click', (e) => {
+        const href = anchor.getAttribute('href');
+
+        if (href.includes('#') && !href.includes('.html#')) {
+          e.preventDefault();
+          const targetId = href.split('#')[1];
+          const target = document.getElementById(targetId);
+
+          if (target) {
+            if (this.smoother) {
+              this.smoother.scrollTo(target, true, 'top top');
+            } else {
+              target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+          }
+        }
+      });
     });
   }
 

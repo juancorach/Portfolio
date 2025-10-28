@@ -8,6 +8,10 @@
         grid-template-columns: 1fr 1fr;
         gap: var(--spacing-sm);
         padding: var(--spacing-xxl) 0;
+
+        @media screen and (max-width: $breakpoint-md) {
+            padding: var(--spacing-lg) 0 var(--spacing-xxl) 0;
+        }
     }
 
     .apropos__content {
@@ -15,6 +19,10 @@
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
+
+        @media screen and (max-width: $breakpoint-sm) {
+            order: 2;
+        }
     }
 
     .apropos__media {

@@ -21,7 +21,7 @@
                 grid-template-columns: 1fr;
                 gap: var(--spacing-lg);
                 height: auto;
-                padding: var(--spacing-xl) 0;
+                padding: var(--spacing-md) 0 var(--spacing-xl) 0;
             }
         }
 
@@ -30,6 +30,10 @@
                 order: 2;
                 max-width: 400px;
                 margin: 0 auto;
+
+                img {
+                    max-height: 400px;
+                }
             }
         }
 

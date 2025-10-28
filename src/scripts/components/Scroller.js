@@ -203,18 +203,25 @@ export default class Scroller {
       anchor.addEventListener('click', (e) => {
         const href = anchor.getAttribute('href');
 
-        if (href.includes('#') && !href.includes('.html#')) {
-          e.preventDefault();
-          const targetId = href.split('#')[1];
-          const target = document.getElementById(targetId);
+        if (href.includes('#')) {
+          // Séparer le path de l'ancre
+          const [path, hash] = href.split('#');
+          const currentPath = window.location.pathname;
 
-          if (target) {
-            if (this.smoother) {
-              this.smoother.scrollTo(target, true, 'top top');
-            } else {
-              target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          // Si c'est sur la même page (path vide ou identique)
+          if (!path || path === currentPath || path === '.') {
+            e.preventDefault();
+            const target = document.getElementById(hash);
+
+            if (target) {
+              if (this.smoother) {
+                this.smoother.scrollTo(target, true, 'top top');
+              } else {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }
             }
           }
+          // Sinon, laisser le navigateur gérer la navigation vers la nouvelle page avec l'ancre
         }
       });
     });

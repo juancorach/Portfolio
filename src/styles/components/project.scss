@@ -204,14 +204,16 @@
                 }
             }
 
+            @media screen and (max-width: $breakpoint-md) {
+                .compare h3 {
+                    padding-bottom: var(--spacing-sm);
+                }
+            }
+
             @media screen and (max-width: $breakpoint-sm) {
                 display: flex;
                 flex-direction: column;
                 gap: var(--spacing-lg);
-
-                .compare h3 {
-                    padding-bottom: var(--spacing-sm);
-                }
             }
         }
     }

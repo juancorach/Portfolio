@@ -18,6 +18,8 @@
     }
 
     .apropos__media {
+        overflow: hidden;
+
         img {
             object-fit: cover;
             width: 100%;
@@ -63,6 +65,7 @@
         height: 95vh;
         bottom: 0;
         right: 0;
+        overflow: hidden;
 
         img {
             object-fit: cover;
@@ -511,11 +514,18 @@
         padding: var(--spacing-lg) 0 var(--spacing-xxl) 0;
 
         .awards__media {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            border-radius: var(--spacing-sm);
+            max-height: 500px;
+
             img {
+                display: block;
                 object-fit: cover;
                 width: 100%;
-                height: 100%;
-                border-radius: var(--spacing-sm);
+                height: 60vh;
             }
         }
 
@@ -524,6 +534,10 @@
             flex-direction: column;
             justify-content: center;
             align-items: flex-start;
+
+            p {
+                padding-bottom: var(--spacing-md);
+            }
         }
 
         @media screen and (max-width: $breakpoint-sm) {

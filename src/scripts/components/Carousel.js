@@ -111,7 +111,5 @@ export default class Carousel {
         this.swiper.pagination.update();
       }
     }, 100);
-
-    console.log('Initialisation de ma composante Carousel');
   }
 }

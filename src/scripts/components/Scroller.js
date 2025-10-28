@@ -13,6 +13,8 @@ export default class Scroller {
     this.horizScrollTriggers = [];
     this.smoother = null;
     this.isMobile = this.checkIfMobile();
+    this.isHorizDisabled = this.checkIfHorizDisabled();
+    this.isEffectsDisabled = this.checkIfEffectsDisabled();
 
     this.setOptions();
     this.init();
@@ -28,6 +30,14 @@ export default class Scroller {
     );
   }
 
+  checkIfHorizDisabled() {
+    return window.innerWidth <= 1200;
+  }
+
+  checkIfEffectsDisabled() {
+    return window.innerWidth < 1366;
+  }
+
   init() {
     if (this.isMobile) {
       console.log('Mobile détecté - ScrollSmoother désactivé');
@@ -37,7 +47,7 @@ export default class Scroller {
 
     this.smoother = ScrollSmoother.create({
       smooth: 2,
-      effects: true,
+      effects: !this.checkIfEffectsDisabled(),
       smoothTouch: false,
       onUpdate: this.onUpdateScroll.bind(this),
       onStop: this.onStopScroll.bind(this),
@@ -98,7 +108,7 @@ export default class Scroller {
   initHoriz() {
     this.killHorizScrollTriggers();
 
-    if (window.innerWidth <= 1024) {
+    if (this.checkIfHorizDisabled()) {
       return;
     }
 
@@ -144,9 +154,21 @@ export default class Scroller {
       clearTimeout(resizeTimer);
       resizeTimer = setTimeout(() => {
         const wasMobile = this.isMobile;
+        const wasHorizDisabled = this.isHorizDisabled;
+
         this.isMobile = this.checkIfMobile();
+        this.isHorizDisabled = this.checkIfHorizDisabled();
 
         if (wasMobile !== this.isMobile) {
+          if (this.smoother) {
+            this.smoother.kill();
+            this.smoother = null;
+          }
+          this.init();
+        } else if (
+          wasHorizDisabled !== this.isHorizDisabled &&
+          !this.isMobile
+        ) {
           if (this.smoother) {
             this.smoother.kill();
             this.smoother = null;

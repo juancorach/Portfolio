@@ -164,10 +164,12 @@
    ========================================================================== */
 
 .page-projects {
-    padding-top: 96px;
+    @media (max-width: 1200px) {
+        padding-top: 100px;
+    }
 
     @media (max-width: 768px) {
-        padding-top: 64px;
+        padding-top: 72px;
     }
 
     .section {
@@ -176,6 +178,7 @@
         .wrapper {
             display: flex;
             align-items: flex-start;
+            justify-content: center;
             gap: 120px;
 
             @media (max-width: 1024px) {
@@ -213,7 +216,7 @@
         max-height: none !important;
         padding: 0 !important;
 
-        @media (max-width: 1024px) {
+        @media (max-width: 1200px) {
             height: auto !important;
             min-height: 70vh;
         }
@@ -226,14 +229,13 @@
         .wrapper {
             flex-direction: column;
             gap: 0;
-            padding-top: 40px;
 
-            @media (max-width: $breakpoint-ml) {
-                padding-top: var(--spacing-xxl);
+            @media (max-width: 1200px) {
+                padding: var(--spacing-xxl) 0;
             }
 
-            @media (max-width: 768px) {
-                padding-top: 24px;
+            @media (max-width: 1024px) {
+                padding: var(--spacing-lg) 0 var(--spacing-xxl) 0;
             }
         }
 
@@ -242,14 +244,51 @@
             gap: var(--spacing-md);
             padding-top: var(--spacing-md);
 
-            @media (max-width: 1024px) {
-                gap: var(--spacing-lg);
+            @media (max-width: 1200px) {
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+                gap: var(--spacing-xl);
+
+                .section__content {
+                    width: 100%;
+                }
+
+                .card {
+                    gap: var(--spacing-lg);
+                }
+
+                .card--reverse {
+                    .card__media {
+                        order: 2;
+                    }
+                }
+
+                .card__content {
+                    padding-right: 0 !important;
+                    max-width: 50vw;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: flex-start;
+                }
             }
 
             @media (max-width: 768px) {
-                flex-direction: column;
                 gap: var(--spacing-xxl);
                 padding: var(--spacing-lg) 0 var(--spacing-xl) 0;
+
+                .card--reverse {
+                    .card__media {
+                        order: 1;
+                    }
+                }
+
+                .card__content {
+                    max-width: none;
+                    order: 2;
+                }
             }
 
             .card__media {
@@ -294,123 +333,116 @@
         }
     }
 
-    .section__content .card {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        align-items: center;
-        gap: var(--spacing-xxl);
-        width: 100%;
-
-        @media (max-width: 1024px) {
-            grid-template-columns: 40% 60%;
-            gap: var(--spacing-xl);
-            align-items: flex-start;
-        }
-
-        @media (max-width: 768px) {
-            grid-template-columns: 1fr;
-            gap: var(--spacing-md);
-        }
-
-        &:hover {
-            color: white;
-        }
-
-        .card__media {
-            width: 100%;
-            height: 100%;
-            display: flex;
+    .section__content {
+        .card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
             align-items: center;
-            justify-content: center;
-
-            @media (max-width: 768px) {
-                order: -1;
-            }
-
-            img {
-                width: 100%;
-                height: auto;
-                object-fit: contain;
-                border-radius: 8px;
-            }
-        }
-
-        .card__content {
+            gap: var(--spacing-xxl);
             width: 100%;
-            padding-right: var(--spacing-md);
 
             @media (max-width: 1024px) {
-                padding-right: var(--spacing-sm);
+                gap: var(--spacing-xl);
+                align-items: flex-start;
             }
 
             @media (max-width: 768px) {
-                padding-right: 0;
-            }
-        }
-
-        .surtitle {
-            padding: 0;
-        }
-
-        .categories {
-            display: flex;
-            gap: var(--spacing-sm);
-            padding-top: 8px;
-            flex-wrap: wrap;
-
-            @media (max-width: 1024px) {
-                gap: 6px;
+                grid-template-columns: 1fr;
+                gap: var(--spacing-md);
             }
 
-            @media (max-width: 768px) {
-                gap: 8px;
+            &:hover {
+                color: white;
             }
 
-            .category {
-                display: inline-flex;
+            .card__media {
+                width: 100%;
+                height: 100%;
+                display: flex;
                 align-items: center;
                 justify-content: center;
-                padding: 8px var(--spacing-sm);
-                background: rgba(60, 59, 59, 0.4);
-                border-radius: var(--spacing-xl);
-                backdrop-filter: blur(3px);
-                -webkit-backdrop-filter: blur(10px);
-                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
-                    inset 0 1px 0 rgba(255, 255, 255, 0.3);
-                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-                overflow: hidden;
+
+                @media (max-width: 768px) {
+                    order: -1;
+                }
+
+                img {
+                    width: 100%;
+                    height: auto;
+                    object-fit: contain;
+                    border-radius: 8px;
+                }
+            }
+
+            .card__content {
+                width: 100%;
+                padding-right: var(--spacing-md);
+            }
+
+            .surtitle {
+                padding: 0;
+            }
+
+            .categories {
+                display: flex;
+                gap: var(--spacing-sm);
+                padding-top: 8px;
+                flex-wrap: wrap;
 
                 @media (max-width: 1024px) {
-                    padding: 6px 10px;
+                    gap: 6px;
                 }
 
                 @media (max-width: 768px) {
-                    padding: 6px 12px;
+                    gap: 8px;
                 }
 
-                @media (max-width: 480px) {
-                    padding: 4px 10px;
+                .category {
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 8px var(--spacing-sm);
+                    background: rgba(60, 59, 59, 0.4);
+                    border-radius: var(--spacing-xl);
+                    backdrop-filter: blur(3px);
+                    -webkit-backdrop-filter: blur(10px);
+                    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+                    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                    overflow: hidden;
+
+                    @media (max-width: 1024px) {
+                        padding: 6px 10px;
+                    }
+
+                    @media (max-width: 768px) {
+                        padding: 6px 12px;
+                    }
+
+                    @media (max-width: 480px) {
+                        padding: 4px 10px;
+                    }
                 }
             }
-        }
 
-        p {
-            padding: var(--spacing-md) 0;
-            margin: 0;
+            p {
+                padding: var(--spacing-md) 0;
+                margin: 0;
 
-            @media (max-width: 1024px) {
-                padding: var(--spacing-sm) 0;
-                line-height: 1.5;
+                @media (max-width: 1024px) {
+                    padding: var(--spacing-sm) 0;
+                    line-height: 1.5;
+                }
+
+                @media (max-width: 768px) {
+                    padding: var(--spacing-sm) 0;
+                }
             }
 
-            @media (max-width: 768px) {
-                padding: var(--spacing-sm) 0;
-            }
-        }
-
-        h3 {
-            @media (max-width: 1024px) {
-                line-height: 1.2;
+            h3 {
+                @media (max-width: 1024px) {
+                    line-height: 1.2;
+                }
             }
         }
     }

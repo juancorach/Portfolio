@@ -167,7 +167,8 @@
         border: none;
         backdrop-filter: blur(3px);
         -webkit-backdrop-filter: blur(10px);
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
+        box-shadow:
+            0 8px 32px rgba(0, 0, 0, 0.1),
             inset 0 1px 0 rgba(255, 255, 255, 0.3);
         padding: var(--spacing-lg);
 
@@ -183,7 +184,8 @@
         border: none;
         backdrop-filter: blur(3px);
         -webkit-backdrop-filter: blur(10px);
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
+        box-shadow:
+            0 8px 32px rgba(0, 0, 0, 0.1),
             inset 0 1px 0 rgba(255, 255, 255, 0.3);
         padding: var(--spacing-lg);
         height: 100%;
@@ -200,7 +202,8 @@
         border: none;
         backdrop-filter: blur(3px);
         -webkit-backdrop-filter: blur(10px);
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
+        box-shadow:
+            0 8px 32px rgba(0, 0, 0, 0.1),
             inset 0 1px 0 rgba(255, 255, 255, 0.3);
         padding: var(--spacing-lg);
 
@@ -224,7 +227,8 @@
                 backdrop-filter: blur(3px);
                 -webkit-backdrop-filter: blur(10px);
                 cursor: pointer;
-                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
+                box-shadow:
+                    0 8px 32px rgba(0, 0, 0, 0.1),
                     inset 0 1px 0 rgba(255, 255, 255, 0.3);
                 transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
                 overflow: visible;
@@ -236,7 +240,8 @@
                     background-color: var(--color-primary);
                     backdrop-filter: blur(25px);
                     -webkit-backdrop-filter: blur(25px);
-                    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4),
+                    box-shadow:
+                        0 16px 48px rgba(0, 0, 0, 0.4),
                         inset 0 1px 0 rgba(255, 255, 255, 0.4),
                         0 0 0 1px rgba(255, 255, 255, 0.3);
                     animation: none;
@@ -257,7 +262,9 @@
                     bottom: 125%;
                     left: 50%;
                     transform: translateX(-50%);
-                    transition: opacity 0.3s, visibility 0.3s;
+                    transition:
+                        opacity 0.3s,
+                        visibility 0.3s;
                     white-space: nowrap;
                     font-size: 14px;
 
@@ -282,15 +289,18 @@
 
             @keyframes glassPulse {
                 0% {
-                    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3),
+                    box-shadow:
+                        0 8px 32px rgba(0, 0, 0, 0.3),
                         inset 0 1px 0 rgba(255, 255, 255, 0.3);
                 }
                 50% {
-                    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4),
+                    box-shadow:
+                        0 8px 32px rgba(0, 0, 0, 0.4),
                         inset 0 1px 0 rgba(255, 255, 255, 0.4);
                 }
                 100% {
-                    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3),
+                    box-shadow:
+                        0 8px 32px rgba(0, 0, 0, 0.3),
                         inset 0 1px 0 rgba(255, 255, 255, 0.3);
                 }
             }
@@ -307,7 +317,8 @@
         border: none;
         backdrop-filter: blur(3px);
         -webkit-backdrop-filter: blur(10px);
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
+        box-shadow:
+            0 8px 32px rgba(0, 0, 0, 0.1),
             inset 0 1px 0 rgba(255, 255, 255, 0.3);
         padding: 64px 0;
         height: 100%;
@@ -397,7 +408,8 @@
         border-radius: 24px;
         backdrop-filter: blur(3px);
         -webkit-backdrop-filter: blur(10px);
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
+        box-shadow:
+            0 8px 32px rgba(0, 0, 0, 0.1),
             inset 0 1px 0 rgba(255, 255, 255, 0.3);
         padding: 8px;
         z-index: 10;
@@ -515,7 +527,7 @@
 }
 
 .awards {
-    .grid {
+    .awards__card {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: var(--spacing-lg);
@@ -527,13 +539,12 @@
             align-items: center;
             overflow: hidden;
             border-radius: var(--spacing-sm);
-            max-height: 500px;
 
             img {
                 display: block;
                 object-fit: cover;
                 width: 100%;
-                height: 60vh;
+                height: 110%;
             }
         }
 
@@ -553,6 +564,10 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+
+            .order-change {
+                order: 2;
+            }
         }
     }
 }
